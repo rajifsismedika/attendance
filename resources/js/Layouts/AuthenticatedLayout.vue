@@ -148,5 +148,6 @@ const showingNavigationDropdown = ref(false);
                 <slot />
             </main>
         </div>
+        <notifications position="top center" classes="mt-4 success p-2 rounded"/>
     </div>
 </template>

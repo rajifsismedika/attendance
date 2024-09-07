@@ -6,6 +6,8 @@ import axios from 'axios';
 import { ref, onMounted } from 'vue';
 import DigitalClock from '@/Components/DigitalClock.vue'
 import { format } from 'date-fns';
+import { Capacitor } from '@capacitor/core';
+import { notify } from "@kyvg/vue3-notification";
 
 interface Attendance {
   id: number;
@@ -53,6 +55,11 @@ const getHistory = async () => {
 
 onMounted(() => {
     getHistory()
+    notify({
+        title: "Authorization",
+        text: "You have been logged in!",
+        type: 'success',
+    });
 })
 
 const formatAttTime = (time: string | undefined): string => {
